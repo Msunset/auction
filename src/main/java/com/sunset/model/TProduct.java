@@ -1,15 +1,25 @@
 package com.sunset.model;
 
-import java.io.Serializable;
+import javax.persistence.Id;
 import java.util.Date;
 
-public class Product implements Serializable {
+public class TProduct {
+    @Id
     private Integer id;
+
     private String productname;
+
     private String image;
+
     private Date creattime;
-    private double price;
+
+    private Double price;
+
     private Integer state;
+
+    private Date starttime;
+
+    private Date endtime;
 
     public Integer getId() {
         return id;
@@ -24,7 +34,7 @@ public class Product implements Serializable {
     }
 
     public void setProductname(String productname) {
-        this.productname = productname;
+        this.productname = productname == null ? null : productname.trim();
     }
 
     public String getImage() {
@@ -32,7 +42,7 @@ public class Product implements Serializable {
     }
 
     public void setImage(String image) {
-        this.image = image;
+        this.image = image == null ? null : image.trim();
     }
 
     public Date getCreattime() {
@@ -43,11 +53,11 @@ public class Product implements Serializable {
         this.creattime = creattime;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -59,15 +69,19 @@ public class Product implements Serializable {
         this.state = state;
     }
 
-    public Product() {
+    public Date getStarttime() {
+        return starttime;
     }
 
-    public Product(Integer id, String productname, String image, Date creattime, double price, Integer state) {
-        this.id = id;
-        this.productname = productname;
-        this.image = image;
-        this.creattime = creattime;
-        this.price = price;
-        this.state = state;
+    public void setStarttime(Date starttime) {
+        this.starttime = starttime;
+    }
+
+    public Date getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(Date endtime) {
+        this.endtime = endtime;
     }
 }
