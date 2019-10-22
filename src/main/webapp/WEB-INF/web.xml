@@ -19,6 +19,7 @@
     <!-- 默认匹配所有的请求 -->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+<!--  解决跨域请求-->
   <filter>
     <filter-name>SimpleCORSFilter</filter-name>
     <filter-class>com.sunset.filters.CrossFilter</filter-class>
