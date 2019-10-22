@@ -1,5 +1,4 @@
 package com.sunset.service.impl;
-
 import com.sunset.dao.TProductMapper;
 import com.sunset.dao.TRecordMapper;
 import com.sunset.model.TProduct;
@@ -7,9 +6,7 @@ import com.sunset.model.TRecord;
 import com.sunset.service.RecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 import tk.mybatis.mapper.entity.Example;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;

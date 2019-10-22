@@ -1,13 +1,5 @@
 package com.sunset.dao;
-
 import com.sunset.model.TUser;
-
-import java.util.List;
-
-import com.sunset.model.TUserExample;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 @Repository

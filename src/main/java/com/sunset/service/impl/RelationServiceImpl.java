@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Service
 public class RelationServiceImpl implements RelationService {
-    @Resource
+    @Autowired
     private TRelationMapper relationMapper;
     @Autowired
     TUserMapper userMapper;
