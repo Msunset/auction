@@ -5,6 +5,7 @@ import com.sunset.model.TProduct;
 import com.sunset.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
 import java.util.List;
@@ -27,6 +28,16 @@ public class ProductServiceImpl implements ProductService {
     public TProduct findById(Integer id) {
         TProduct tProduct = tproductMapper.selectByPrimaryKey(id);
         return tProduct;
+    }
+    //根据商品名称模糊查询
+
+    @Override
+    public List<TProduct> findByProductName(String name) {
+        Example example = new Example(TProduct.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andLike("productname","%"+name+"%");
+        List<TProduct> productList = tproductMapper.selectByExample(example);
+        return productList;
     }
 
     @Override

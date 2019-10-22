@@ -12,6 +12,7 @@ public interface ProductService {
     List<TProduct> findAll();
     TProduct findById(Integer id);
     void addProduct(TProduct product);
+    List<TProduct> findByProductName(String name);
 
 
 }

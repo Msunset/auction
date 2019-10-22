@@ -53,6 +53,14 @@ public class ProductController {
             return new Result(false,"未知错误",StateCode.ERROR);
         }
     }
+    @ApiOperation(value = "根据商品名称查询")
+    @RequestMapping(value = "/findByProductName/{name}",method = RequestMethod.GET)
+    public Result findByProductName(@PathVariable String name){
+        List<TProduct> tProductList = productService.findByProductName(name);
+        return new Result(true,"查询成功",StateCode.OK,tProductList);
+
+
+    }
     //增加商品
     @ApiOperation(value = "添加商品")
     @RequestMapping(value = "/addProduct",method = RequestMethod.POST)
@@ -60,11 +68,9 @@ public class ProductController {
         try {
             productService.addProduct(product);
             return new Result(true,"添加成功",StateCode.OK);
-
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false,"未知错误",StateCode.ERROR);
-
         }
     }
 
