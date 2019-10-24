@@ -25,6 +25,7 @@ public class DynamicController {
     @ApiOperation(value = "发布动态")
     @RequestMapping(value = "/addDynamic",method = RequestMethod.POST)
     public Result addDynamic(@RequestBody TDynamic dynamic){
+        System.out.println(dynamic);
         try {
             dynamicService.addDynamic(dynamic);
             return new Result(true,"发布成功", StateCode.OK);

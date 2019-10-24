@@ -1,12 +1,16 @@
 package com.sunset.service.impl;
 
+import com.alibaba.druid.support.json.JSONUtils;
+import com.alibaba.fastjson.JSON;
 import com.sunset.dao.TDynamicMapper;
 import com.sunset.model.TDynamic;
 import com.sunset.service.DynamicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import springfox.documentation.spring.web.json.Json;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,6 +23,10 @@ public class DynamicServiceImpl implements DynamicService {
     private TDynamicMapper dynamicMapper;
     @Override
     public void addDynamic(TDynamic dynamic)  {
+        Object image = dynamic.getImage();
+        String s = JSON.toJSONString(image);
+        System.out.println(s);
+
         dynamicMapper.insert(dynamic);
     }
     //根据id查看好友动态

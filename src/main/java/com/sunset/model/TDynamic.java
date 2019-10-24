@@ -1,7 +1,9 @@
 package com.sunset.model;
 
 import javax.persistence.Id;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class TDynamic {
     @Id
@@ -15,7 +17,7 @@ public class TDynamic {
 
     private String headphoto;
 
-    private String image;
+    private Object image;
 
     private String content;
 
@@ -44,7 +46,7 @@ public class TDynamic {
     }
 
     public void setUname(String uname) {
-        this.uname = uname == null ? null : uname.trim();
+        this.uname = uname;
     }
 
     public Date getCreattime() {
@@ -60,15 +62,15 @@ public class TDynamic {
     }
 
     public void setHeadphoto(String headphoto) {
-        this.headphoto = headphoto == null ? null : headphoto.trim();
+        this.headphoto = headphoto;
     }
 
-    public String getImage() {
+    public Object getImage() {
         return image;
     }
 
-    public void setImage(String image) {
-        this.image = image == null ? null : image.trim();
+    public void setImage(Object image) {
+        this.image = image;
     }
 
     public String getContent() {
@@ -76,7 +78,7 @@ public class TDynamic {
     }
 
     public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+        this.content = content;
     }
 
     public Integer getAddlike() {
